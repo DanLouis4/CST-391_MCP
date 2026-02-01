@@ -1,24 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListSongsComponent } from './list-songs/list-songs.component';
-import { DisplaySongsComponent } from './display-songs/display-songs.component';
+import { SongListComponent } from './song-list/song-list.component';
+import { SongDisplayComponent } from './song-display/song-display.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
-import { CreateSongComponent } from './create-song/create-song.component';
+import { SongCreateComponent } from './song-create/song-create.component';
+import { AlbumListComponent } from './album-list/album-list.component';
+import { SongUpdateComponent } from './song-update/song-update.component';
+import { AlbumUpdateComponent } from './album-update/album-update.component';
+import { AlbumDisplayComponent } from './album-display/album-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListSongsComponent,
-    DisplaySongsComponent,
+    SongListComponent,
+    SongDisplayComponent,
     SearchComponent,
     HomeComponent,
-    CreateSongComponent
+    SongCreateComponent,
+    AlbumListComponent,
+    SongUpdateComponent,
+    AlbumUpdateComponent,
+    AlbumDisplayComponent
   ],
   imports: [
     BrowserModule,

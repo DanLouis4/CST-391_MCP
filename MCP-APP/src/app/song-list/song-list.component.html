@@ -37,17 +37,15 @@
               class="btn btn-sm btn-outline-primary"
               [routerLink]="['/songs', song.song_id]"
               title="View"
-            >
-              <i class="fa fa-eye"></i>
+            > View <i class="fa fa-eye"></i>
             </a>
 
             <!-- Edit -->
             <a
               class="btn btn-sm btn-outline-secondary"
-              [routerLink]="['/songs/edit', song.song_id]"
+              [routerLink]="['/songs/update', song.song_id]"
               title="Edit"
-            >
-              <i class="fa fa-edit"></i>
+            > Edit <i class="fa fa-edit"></i>
             </a>
 
             <!-- Delete -->
@@ -57,7 +55,7 @@
               (click)="deleteSong(song.song_id)"
               title="Delete"
             >
-              <i class="fa fa-trash"></i>
+              Delete <i class="fa fa-trash"></i>
             </button>
           </div>
 
@@ -67,4 +65,10 @@
   </div>
 
 </div>
+<a
+  routerLink="/songs/create"
+  class="create-song-fab"
+  aria-label="Create new song"
+><i class="fa fa-plus"></i>
+</a>
 

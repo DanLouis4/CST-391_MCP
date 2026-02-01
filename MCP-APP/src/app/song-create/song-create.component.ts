@@ -4,27 +4,28 @@ import { Song } from '../models/songs.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create-song',
+  selector: 'app-song-create',
   standalone: false,
-  templateUrl: './create-song.component.html',
-  styleUrls: ['./create-song.component.css']
+  templateUrl: './song-create.component.html',
+  styleUrls: ['./song-create.component.css']
 })
-export class CreateSongComponent implements OnInit {
+export class SongCreateComponent implements OnInit {
 
   song: Song = {
-    // keep ONLY fields the user actually enters / your API expects
-    song_title: '',
-    artist: '',
-    genre: '',
-    lyrics: '',
-    album_id: 0,
+  song_title: '',
+  artist: '',
+  genre: '',
+  lyrics: '',
+  streaming_url: '',
+  video_url: '',
+  album_title: '',
+  release_year: 0,
+  artwork_url: '',
+  notes: '',
+  album_id: 0,
+  theme_id: 0
+};
 
-    // include these only if your API/DB actually supports them
-    video_url: '',
-    streaming_url: '',
-    notes: '',
-    theme_id: 0
-  };
 
   constructor(private musicService: MusicServiceService, private router: Router) {}
 
@@ -39,6 +40,7 @@ export class CreateSongComponent implements OnInit {
       console.log('Song created:', createdSong);
       this.router.navigate(['/songs']);
     });
+
 
   }
 

@@ -1,0 +1,77 @@
+<div class="container page-content py-4">
+  <h2 class="mb-4">Albums</h2>
+
+  <div class="row g-3">
+    <div class="col-md-6 col-lg-3" *ngFor="let album of albums">
+      <div class="card h-100 shadow-sm">
+        <!-- Card Image -->
+        <img
+          [src]="album.artwork_url ? album.artwork_url: 'assets/no-image-available.png'          "
+          [alt]="album.title"
+          class="img-fluid"
+          style="max-width: 100%"
+        />
+        <ng-template #noImage>
+          <img
+            src="assets/no-image-available.png"
+            class="card-img-top"
+            alt="No Album Art Available"
+          />
+        </ng-template>
+
+        <!-- Card Body -->
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            {{ album.title }} <small class="fs-6">({{ album.release_year }})</small>
+          </h5>
+          <h6 class="card-subtitle mb-3 text-muted">
+            {{ album.artist }}
+          </h6>
+          <div class="mt-auto d-flex justify-content-end gap-2">
+            <!-- View Songs from Album -->
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary"
+              title="View Songs"
+              (click)="toggleSongs(album.album_id)"
+            > Songs <i class="fa fa-music"></i>
+            </button>
+            <!-- Edit -->
+            <a class="btn btn-sm btn-outline-secondary"
+              [routerLink]="['/albums/update', album.album_id]"
+              title="Edit"> Edit <i class="fa fa-edit"></i></a>
+          </div>
+          <!-- Collapsible Songs List -->
+          <div class="mt-2 text-end">
+            <div
+              *ngIf="expandedAlbumId === album.album_id"
+              class="mt-2 border-top pt-2"
+            >
+              <ul class="list-unstyled mb-0">
+                <li *ngFor="let song of albumSongs[album.album_id]">
+                  <a [routerLink]="['/songs', song.song_id]"
+                    class="text-decoration-none"
+                  ><small>{{ song.song_title }}</small>
+                  </a>
+                </li>
+                <li *ngIf="albumSongs[album.album_id]?.length === 0"
+                    class="text-muted fst-italic text-center py-2">
+
+                  <div>No songs found for this album.</div>
+
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-danger mt-2"
+                    (click)="deleteAlbum(album.album_id)"
+                  >
+                    Delete Album
+                  </button>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

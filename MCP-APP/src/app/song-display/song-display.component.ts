@@ -4,12 +4,12 @@ import { MusicServiceService } from '../services/music-service.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-display-songs',
+  selector: 'app-song-display',
   standalone: false,
-  templateUrl: './display-songs.component.html',
-  styleUrls: ['./display-songs.component.css']
+  templateUrl: './song-display.component.html',
+  styleUrls: ['./song-display.component.css']
 })
-export class DisplaySongsComponent implements OnInit {
+export class SongDisplayComponent implements OnInit {
 
   song: any;
   safeVideoUrl?: SafeResourceUrl;

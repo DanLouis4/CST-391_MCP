@@ -7,8 +7,8 @@ export interface Song {
     video_url: string;
     streaming_url: string;
     notes: string;
-    album_id: number;
-    theme_id: number;
+    album_id: number | null;
+    theme_id: number | null;
     created_at?: string;
     updated_at?: string;
 

@@ -3,12 +3,12 @@ import { Song } from '../models/songs.model';
 import { MusicServiceService } from '../services/music-service.service';
 
 @Component({
-  selector: 'app-list-songs',
+  selector: 'app-song-list',
   standalone: false,
-  templateUrl: './list-songs.component.html',
-  styleUrls: ['./list-songs.component.css']
+  templateUrl: './song-list.component.html',
+  styleUrls: ['./song-list.component.css']
 })
-export class ListSongsComponent implements OnInit {
+export class SongListComponent implements OnInit {
 
   songs: Song[] = [];
 
