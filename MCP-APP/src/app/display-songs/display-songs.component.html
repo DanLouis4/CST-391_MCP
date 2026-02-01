@@ -1,0 +1,62 @@
+<section class="bg-light page-content py-4 mb-4">
+  <div class="container mt-4">
+    <h3 class="text-center">
+      <p class="border-bottom border-dark pb-2">Song Details</p>
+    </h3>
+
+    <div *ngIf="song.artwork_url" class="text-center my-4">
+      <img
+        [src]="song.artwork_url"
+        [alt]="song.album_title"
+        class="img-fluid rounded"
+        style="max-width: 320px"
+      />
+    </div>
+
+    <hr />
+
+    <div *ngIf="song">
+      <div class="song-header text-center mb-4">
+        <h2>"{{ song.song_title }}"</h2>
+        <p>{{ song.artist }}</p>
+        <p>{{ song.album_title }} - {{ song.release_year }} - {{ song.genre }}</p>
+        <p><a href="{{ song.streaming_url }}" target="_blank">Streaming Link</a> - {{ song.theme_name }}</p>
+      </div>
+
+    <hr />
+
+      <div class="song-content">
+        <div class="row">
+          <!-- LEFT COLUMN -->
+          <div class="col-md-6">
+            <section>
+              <h3>Lyrics</h3>
+              <pre>{{ song.lyrics }}</pre>
+            </section>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="col-md-6">
+            <section *ngIf="song.notes">
+              <h3>Notes</h3>
+              <p>{{ song.notes }}</p>
+            </section>
+
+            <section *ngIf="safeVideoUrl">
+              <h3>Music Video</h3>
+              <div class="ratio ratio-16x9">
+                <iframe
+                  [src]="safeVideoUrl"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

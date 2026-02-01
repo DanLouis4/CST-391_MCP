@@ -1,0 +1,13 @@
+# Ignore everything by default
+*
+
+# Allow the two MCP projects
+!MCP-API/
+!MCP-API/**
+
+!MCP-APP/
+!MCP-APP/**
+
+# Always allow git metadata files
+!.gitignore
+!README.md

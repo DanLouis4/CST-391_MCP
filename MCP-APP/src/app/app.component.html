@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">MCP</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/songs" routerLinkActive="active">Songs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/search" routerLinkActive="active">Search</a>
+        </li>
+      </ul>
+
+      <!-- Quick Search (placeholder) -->
+      <form class="d-flex" role="search" (submit)="$event.preventDefault()">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Quick Search"
+          aria-label="Quick Search"
+        />
+        <button class="btn btn-outline-light" type="submit">Go</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<main class="container-fluid">
+  <router-outlet></router-outlet>
+</main>

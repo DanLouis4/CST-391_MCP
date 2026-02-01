@@ -1,0 +1,42 @@
+html {
+  overflow: hidden;
+}
+
+.hero-image {
+  background-image: url('/images/img-girl-listening-music-with-headphones.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+}
+
+.home-logo {
+  font-family: var(--mcp-font-brand);
+  font-size: 10rem;
+  line-height: 1;
+}
+
+.home-tagline {
+  font-weight: 600;
+  font-size: x-large;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.home-description {
+  font-size: 0.9rem;
+  max-width: 420px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  overflow: auto;
+}

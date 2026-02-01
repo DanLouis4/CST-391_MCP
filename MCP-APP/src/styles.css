@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'AR Destine';
+  src: url('/assets/fonts/ARDESTINE.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --mcp-primary: #52a6b8;   /* teal-blue */
+  --mcp-secondary: #3aa6b9;
+  --mcp-dark: #0b3c49;
+  --mcp-light: #f5f7f8;
+
+  --mcp-font-brand: 'AR Destine', sans-serif;
+  --mcp-font-body: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--mcp-font-body);
+  background-color: var(--mcp-light);
+  color: #222;
+}
+
+.navbar {
+  background-color: var(--mcp-primary) !important;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-family: var(--mcp-font-brand);
+  letter-spacing: 1px;
+  font-size: 3rem;
+  color: #fff !important;
+}
+.page-content {
+  margin-top: 80px; /* Adjust based on navbar height */
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+}

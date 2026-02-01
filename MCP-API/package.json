@@ -1,0 +1,46 @@
+{
+  "name": "mcp",
+  "version": "1.0.0",
+  "description": "MCP - My Christian Playlist App",
+  "keywords": [
+    "music",
+    "playlist",
+    "christian"
+  ],
+  "homepage": "https://github.com/DanLouis4/GCU_CST_391#readme",
+  "bugs": {
+    "url": "https://github.com/DanLouis4/GCU_CST_391/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanLouis4/GCU_CST_391.git"
+  },
+  "license": "ISC",
+  "author": "Daniel Louis",
+  "type": "commonjs",
+  "main": "app.ts",
+  "scripts": {
+    "start:watch": "nodemon ./src/app.ts",
+    "start": "npx ts-node ./src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "esm": "^3.2.25",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "mysql": "^2.18.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.6",
+    "@types/mysql": "^2.15.27",
+    "@types/uuid": "^10.0.0",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,37 @@
+<section class="page-content py-4">
+
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label>Title</label>
+      <input [(ngModel)]="song.song_title" name="title" required />
+    </div>
+
+    <div>
+      <label>Artist</label>
+      <input [(ngModel)]="song.artist" name="artist" required />
+    </div>
+
+    <div>
+      <label>Album ID</label>
+      <input type="number" [(ngModel)]="song.album_id" name="album_id" required />
+  </div>
+
+  <div>
+    <label>Release Year</label>
+    <input type="number" [(ngModel)]="song.release_year" name="release_year" />
+  </div>
+
+  <div>
+    <label>Genre</label>
+    <input [(ngModel)]="song.genre" name="genre" />
+  </div>
+
+  <div>
+    <label>Lyrics</label>
+    <textarea [(ngModel)]="song.lyrics" name="lyrics"></textarea>
+  </div>
+
+  <button type="submit">Save Song</button>
+</form>
+
+</section>
