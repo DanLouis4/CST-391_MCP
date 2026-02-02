@@ -7,18 +7,10 @@
       <div class="card h-100 shadow-sm">
 
         <!-- Card Image -->
-        <img
-          [src]="song.artwork_url ? song.artwork_url : 'assets/no-image-available.png'"
-          [alt]="song.song_title"
-          class="img-fluid"
-          style="max-width: 100%;"
-        />
+        <img [src]="song.artwork_url ? song.artwork_url : 'assets/no-image-available.png'" [alt]="song.song_title"
+          class="img-fluid" style="max-width: 100%;" />
         <ng-template #noImage>
-          <img
-            src="assets/no-image-available.png"
-            class="card-img-top"
-            alt="No Album Art Available"
-          />
+          <img src="assets/no-image-available.png" class="card-img-top" alt="No Album Art Available" />
         </ng-template>
 
         <!-- Card Body -->
@@ -33,29 +25,18 @@
 
           <div class="mt-auto d-flex justify-content-end gap-2">
             <!-- View -->
-            <a
-              class="btn btn-sm btn-outline-primary"
-              [routerLink]="['/songs', song.song_id]"
-              title="View"
-            > View <i class="fa fa-eye"></i>
+            <a class="btn btn-sm btn-outline-primary" [routerLink]="['/songs', song.song_id]" title="View"> View <i
+                class="fa fa-eye"></i>
             </a>
 
             <!-- Edit -->
-            <a
-              class="btn btn-sm btn-outline-secondary"
-              [routerLink]="['/songs/update', song.song_id]"
-              title="Edit"
-            > Edit <i class="fa fa-edit"></i>
+            <a class="btn btn-sm btn-outline-success" [routerLink]="['/songs/update', song.song_id]" title="Edit"> Edit
+              <i class="fa fa-edit"></i>
             </a>
 
             <!-- Delete -->
-            <button
-              *ngIf="song.song_id"
-              class="btn btn-sm btn-outline-danger"
-              (click)="deleteSong(song.song_id)"
-              title="Delete"
-            >
-              Delete <i class="fa fa-trash"></i>
+            <button *ngIf="song.song_id" class="btn btn-sm btn-outline-danger" (click)="deleteSong(song.song_id)"
+              title="Delete">Delete <i class="fa fa-trash"></i>
             </button>
           </div>
 
@@ -65,10 +46,5 @@
   </div>
 
 </div>
-<a
-  routerLink="/songs/create"
-  class="create-song-fab"
-  aria-label="Create new song"
-><i class="fa fa-plus"></i>
+<a routerLink="/songs/create" class="create-song-fab" aria-label="Create new song"><i class="fa fa-plus"></i>
 </a>
-

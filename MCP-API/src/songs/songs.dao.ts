@@ -11,7 +11,7 @@ import { songQueries } from "./songs.queries";
 export const createSong = async (song: Song) => {
     return execute<OkPacket>(
         songQueries.createSong,
-        [song.title, song.artist, song.genre, song.lyrics, song.video_url, song.streaming_url, song.notes, song.album_id, song.theme_id]
+        [song.song_title, song.artist, song.genre, song.lyrics, song.video_url, song.streaming_url, song.notes, song.album_id, song.theme_id]
     );
 };
 
@@ -26,7 +26,7 @@ export const readSongById = async (songId: number) => {
 export const updateSong = async (song: Song) => {
     return execute<OkPacket>(
         songQueries.updateSong,
-        [song.title, song.artist, song.genre, song.lyrics, song.video_url, song.streaming_url, song.notes, song.album_id, song.theme_id]
+        [song.song_title, song.artist, song.genre, song.lyrics, song.video_url, song.streaming_url, song.notes, song.album_id, song.theme_id, song.song_id]
     );
 };
 
@@ -41,7 +41,7 @@ export const deleteSong = async (songId: number) => {
 
 export const searchSongs = async (searchTerm: string) => {
     const wildcard = `%${searchTerm}%`;
-    return execute<Song[]>(songQueries.searchSongs, [wildcard, wildcard, wildcard, wildcard, wildcard, wildcard]);
+    return execute<Song[]>(songQueries.searchSongs, [wildcard, wildcard, wildcard, wildcard, wildcard, wildcard, wildcard, wildcard, wildcard]);
 };
 
 

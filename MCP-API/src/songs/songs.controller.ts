@@ -82,7 +82,7 @@ export const createSong: RequestHandler = async (req: Request, res: Response) =>
     // 4) Create song using resolved album_id
     // ---------------------------------
     const songOk: OkPacket = await SongDao.createSong({
-      title: song_title,
+      song_title,
       artist,
       genre,
       lyrics,
@@ -90,7 +90,8 @@ export const createSong: RequestHandler = async (req: Request, res: Response) =>
       streaming_url,
       notes,
       album_id: albumId,
-      theme_id
+      theme_id,
+      song_id: 0
     });
 
     return res.status(201).json({

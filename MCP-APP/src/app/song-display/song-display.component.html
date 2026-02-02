@@ -1,16 +1,13 @@
-<section class="bg-light page-content py-4 mb-4">
+<section *ngIf="song" class="bg-light page-content py-4 mb-4">
   <div class="container mt-4">
+    <a routerLink="/songs" class="btn btn-sm btn-outline-success mb-3 align-self-start">&larr; Back to Songs</a>
+
     <h3 class="text-center">
       <p class="border-bottom border-dark pb-2">Song Details</p>
     </h3>
 
     <div *ngIf="song.artwork_url" class="text-center my-4">
-      <img
-        [src]="song.artwork_url"
-        [alt]="song.album_title"
-        class="img-fluid rounded"
-        style="max-width: 320px"
-      />
+      <img [src]="song.artwork_url" [alt]="song.album_title" class="img-fluid rounded" style="max-width: 320px" />
     </div>
 
     <hr />
@@ -23,7 +20,7 @@
         <p><a href="{{ song.streaming_url }}" target="_blank">Streaming Link</a> - {{ song.theme_name }}</p>
       </div>
 
-    <hr />
+      <hr />
 
       <div class="song-content">
         <div class="row">
@@ -45,18 +42,19 @@
             <section *ngIf="safeVideoUrl">
               <h3>Music Video</h3>
               <div class="ratio ratio-16x9">
-                <iframe
-                  [src]="safeVideoUrl"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allowfullscreen
-                >
+                <iframe [src]="safeVideoUrl" title="YouTube video player" frameborder="0" allowfullscreen>
                 </iframe>
               </div>
             </section>
           </div>
         </div>
       </div>
+    </div>
+    <hr class="my-4" />
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <a routerLink="/songs" class="btn btn-sm btn-outline-success mb-3 align-self-start">&larr; Back to Songs</a>
+      <button class="btn btn-success ms-2" [routerLink]="['/songs/update', song.song_id]" title="Edit">Edit</button>
+      <button *ngIf="song.song_id" class="btn btn-danger" (click)="deleteSong(song.song_id)" title="Delete">Delete&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i></button>
     </div>
   </div>
 </section>

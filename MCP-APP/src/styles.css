@@ -81,6 +81,11 @@ a {
   font-size: 1rem;
 }
 
+.page-content a.button-link {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+}
 /* Floating Action Button for Creating a New Song */
 .create-song-fab {
   position: fixed;
