@@ -33,7 +33,7 @@
               type="button"
               class="btn btn-sm btn-outline-primary"
               title="View Songs"
-              (click)="toggleSongs(album.album_id)"
+              (click)="album.album_id && toggleSongs(album.album_id)"
             > Songs <i class="fa fa-music"></i>
             </button>
             <!-- Edit -->
