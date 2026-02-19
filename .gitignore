@@ -1,13 +1,26 @@
-# Ignore everything by default
+# Ignore everything
 *
 
-# Allow the two MCP projects
+# Allow projects
 !MCP-API/
 !MCP-API/**
 
 !MCP-APP/
 !MCP-APP/**
 
-# Always allow git metadata files
+!mcp-react/
+!mcp-react/**
+
+# Ignore dependencies
+node_modules/
+MCP-API/node_modules/
+MCP-APP/node_modules/
+mcp-react/node_modules/
+
+# Ignore build artifacts
+build/
+dist/
+
+# Always allow git metadata
 !.gitignore
 !README.md
