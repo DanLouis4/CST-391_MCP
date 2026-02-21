@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
@@ -51,7 +50,7 @@ const SongCard = ({ song }) => {
               type="button"
               className="btn btn-sm btn-outline-danger"
               title="Delete"
-              disabled
+              onClick={() => navigate(`/songs/delete/${song.song_id}`)}
             >
               Delete <FontAwesomeIcon icon={["fas", "trash"]} />
             </button>

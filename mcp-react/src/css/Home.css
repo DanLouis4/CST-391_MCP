@@ -1,5 +1,16 @@
-html {
-  overflow: hidden;
+.home-page {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* Chrome, Edge, Safari */
+.home-page::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.home-page {
+  scrollbar-width: none;
 }
 
 .hero-image {

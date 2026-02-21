@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import dataSource from "../../data/dataSource";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -72,9 +72,40 @@ const SongDetails = () => {
             <SongVideo videoUrl={song.video_url} />
           </div>
         </div>
-
+        <hr className="my-4" />
       </div>
-    </section>
+
+      {/* Edit and Back Buttons */}
+      <div className="container">
+        <div className="d-flex justify-content-between gap-2">
+            <button className="btn btn-sm btn-outline-success mb-3" onClick={() => navigate(fromPage === "Albums" ? "/albums" : "/songs")}>
+              <FontAwesomeIcon icon={["fas", "chevron-left"]} />{" "}Back to {fromPage === "Albums" ? "Albums" : "Songs"}
+            </button>
+
+            <div className="d-flex align-items-end gap-2">
+            {/* Edit */}
+            <button
+              type="button"
+              className="btn btn-md btn-outline-success mb-3"
+              onClick={() => navigate(`/songs/edit/${song.song_id}`)}
+              title="Edit"
+            >
+              Edit <FontAwesomeIcon icon={["fas", "edit"]} />
+            </button>
+
+            {/* Delete */}
+            <button
+              type="button"
+              className="btn btn-md btn-outline-danger mb-3"
+              onClick={() => navigate(`/songs/delete/${song.song_id}`)}
+              title="Delete"
+            >
+              Delete <FontAwesomeIcon icon={["fas", "trash"]} />
+            </button> 
+            </div>
+        </div>
+      </div>
+  </section>
   );
 };
 

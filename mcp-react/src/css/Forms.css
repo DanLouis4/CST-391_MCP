@@ -1,0 +1,26 @@
+a {
+    text-decoration: none
+    ;
+}
+
+label.form-label {
+    font-weight: bold;
+    font: 14px sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(81, 96, 125);
+    color: white;
+    display:block;
+    padding: 10px 0px 5px 5px;
+    margin-bottom: 0px;
+}
+input.form-control, textarea.form-control {
+    border: 1px solid rgb(81, 96, 125);
+    border-radius: 0px  0px 3px 3px;
+}
+
+.notes-text {
+  white-space: pre-wrap;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  margin-bottom: 75px;
+}

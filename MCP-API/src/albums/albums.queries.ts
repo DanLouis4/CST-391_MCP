@@ -21,7 +21,8 @@ export const albumQueries = {
 
     deleteAlbum: `
         DELETE FROM albums
-        WHERE album_id = ?`,
+        WHERE album_id = ?
+        AND NOT EXISTS (SELECT 1 FROM songs WHERE songs.album_id = albums.album_id)`,
 
     // ---------------------------
     // Search Queries

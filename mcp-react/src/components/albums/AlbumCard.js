@@ -81,12 +81,17 @@ const AlbumCard = ({
                 ) : (
                   <li className="text-muted fst-italic text-center py-2">
                     <div>No songs found for this album.</div>
+                    <button
+                        type="button"
+                        className="btn btn-sm btn-outline-danger mt-2"
+                        onClick={() => navigate(`/albums/delete/${album.album_id}`)}>
+                          Delete Album
+                    </button>
                   </li>
                 )}
               </ul>
             </div>
           )}
-
         </div>
       </div>
     </div>

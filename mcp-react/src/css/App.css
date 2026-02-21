@@ -17,6 +17,10 @@
   --mcp-font-body: 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
+a {
+  color: var(--mcp-primary);
+  text-decoration: none;
+}
 html {
   scroll-behavior: smooth;
   height: 100%;
@@ -72,15 +76,12 @@ a {
 }
 
 .page-content button[type="submit"] {
-  margin-top: 1.5rem;
   padding: 0.6rem 1.2rem;
-  font-size: 1rem;
 }
 
 .page-content a.button-link {
   margin-top: 1.5rem;
   padding: 0.6rem 1.2rem;
-  font-size: 1rem;
 }
 /* Floating Action Button for Creating a New Song */
 .create-song-fab {
@@ -92,6 +93,8 @@ a {
   width: 64px;
   height: 64px;
   border-radius: 50%;
+
+  border: 2px solid #fff;
 
   background-color: #2c2c2c; /* adjust to your theme */
   color: #ffffff;
@@ -113,7 +116,7 @@ a {
 
 .create-song-fab:hover {
   background-color: #3aa6b9;
-  transform: translateX(-50%) scale(1.05);
+  transform: translateX(-50%) scale(1.15);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
 }
 
@@ -130,13 +133,4 @@ a {
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
